@@ -1,0 +1,11 @@
+workspace = { members = [ "chapter_2","chapter_3"] }
+[package]
+name = "expt-rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chapter_3 = { path = "./chapter_3" }
+chapter_2 = { path = "./chapter_2" }
