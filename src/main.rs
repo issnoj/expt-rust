@@ -1,8 +1,8 @@
-use chapter_3::*;
+use chapter_4::*;
 
 fn main() {
     // single_threaded();
     // multi_threaded();
     // bank();
-    gallery()
+    exec()
 }
