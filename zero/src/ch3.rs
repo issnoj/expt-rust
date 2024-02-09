@@ -92,4 +92,3 @@ pub fn gallery() {
     staff.join().unwrap();
 }
 
-

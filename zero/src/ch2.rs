@@ -1,3 +1,5 @@
+//! 第2章
+
 struct XOR64 {
     x: u64,
 }
@@ -37,6 +39,7 @@ fn randomized_vec() -> (Vec<u64>, Vec<u64>) {
     (v1, v2)
 }
 
+/// シングルスレッドで2億個のxorshift乱数のソートにかかる時間を計測
 pub fn single_threaded() {
     let (mut v1, mut v2) = randomized_vec();
     let start = std::time::Instant::now();
@@ -51,6 +54,7 @@ pub fn single_threaded() {
     );
 }
 
+/// マルチスレッド(2)で2億個のxorshift乱数のソートにかかる時間を計測
 pub fn multi_threaded() {
     let (mut v1, mut v2) = randomized_vec();
     let start = std::time::Instant::now();

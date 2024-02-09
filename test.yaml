@@ -1,0 +1,7 @@
+!Node
+data: 2
+next: !Node
+  data: 1
+  next: !Node
+    data: 0
+    next: Nil
