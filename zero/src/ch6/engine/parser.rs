@@ -113,7 +113,7 @@ fn fold_or(mut seq_or: Vec<AST>) -> Option<AST> {
 }
 
 /// 正規表現を抽象構文木に変換
-pub fn parse(expr: &str) -> Result<AST, Box<ParseError>> {
+pub fn parse(expr: &str) -> Result<AST, ParseError> {
     // 内部状態を表す型
     enum ParseState {
         // 文字列処理中
@@ -162,13 +162,13 @@ pub fn parse(expr: &str) -> Result<AST, Box<ParseError>> {
                             seq_or = prev_or;
                         } else {
                             // "abc)" のように開きカッコがないのに閉じカッコがある場合はエラー
-                            return Err(Box::new(ParseError::InvalidRightParen(i)));
+                            return Err(ParseError::InvalidRightParen(i));
                         }
                     }
                     '|' => {
                         if seq.is_empty() {
                             // "||" "(|abc)" など、式が空の場合はエラー
-                            return Err(Box::new(ParseError::NoPrev(i)));
+                            return Err(ParseError::NoPrev(i));
                         } else {
                             let prev = take(&mut seq);
                             seq_or.push(AST::Seq(prev));
@@ -189,7 +189,7 @@ pub fn parse(expr: &str) -> Result<AST, Box<ParseError>> {
 
     // 閉じカッコが足りない場合はエラー
     if !stack.is_empty() {
-        return Err(Box::new(ParseError::NoRightParen));
+        return Err(ParseError::NoRightParen);
     }
 
     // "()" のように式が空の場合はプッシュしない
@@ -201,6 +201,6 @@ pub fn parse(expr: &str) -> Result<AST, Box<ParseError>> {
     if let Some(ast) = fold_or(seq_or) {
         Ok(ast)
     } else {
-        Err(Box::new(ParseError::Empty))
+        Err(ParseError::Empty)
     }
 }
