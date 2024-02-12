@@ -22,7 +22,7 @@
 //! 実行後は、target/criterion/reports/index.htmlというファイルが生成されるため、
 //! それをWebブラウザで閲覧する。
 use criterion::{criterion_group, criterion_main, Criterion};
-use zero::ch6::engine::do_matching;
+use regex::do_matching;
 use std::time::Duration;
 
 /// (計測のid、a?^n a^nという正規表現、文字列)というタプル

@@ -1,3 +1,7 @@
+fn main() {
+    run();
+}
+
 /// 実行関数です
 ///
 /// # Examples
@@ -8,6 +12,8 @@
 /// ```
 pub fn run() -> Option<u32> {
     println!("run ch5");
+    let even = my_lib::rand_even();
+    println!("{}", even);
     Some(100)
 }
 
@@ -21,11 +27,6 @@ pub fn pred(n: u32) -> Option<u32> {
     } else {
         Some(n - 1)
     }
-}
-
-/// 偶数の乱数を返す
-pub fn rand_even() -> u32 {
-    rand::random::<u32>() & !1
 }
 
 #[cfg(test)]

@@ -1,4 +1,7 @@
-//! 第2章
+fn main() {
+    single_threaded();
+    multi_threaded();
+}
 
 struct XOR64 {
     x: u64,

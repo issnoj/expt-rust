@@ -1,6 +1,6 @@
 //! AST からコード生成を行う
 use super::{parser::AST, Instruction};
-use crate::ch6::helper::safe_add;
+use crate::helper::safe_add;
 use std::{error::Error, fmt::{self, Display}};
 
 /// コード生成を行う関数

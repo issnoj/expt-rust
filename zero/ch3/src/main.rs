@@ -1,3 +1,8 @@
+fn main() {
+    bank();
+    gallery();
+}
+
 use std::{
     collections::BTreeMap,
     sync::{Arc, RwLock, Mutex},

@@ -2,7 +2,7 @@
 //!
 //! コード生成器が生成した命令列と、マッチを行う文字列を受け取り結果を返す
 use super::Instruction;
-use crate::ch6::helper::safe_add;
+use crate::helper::safe_add;
 use std::{
     collections::VecDeque,
     error::Error,

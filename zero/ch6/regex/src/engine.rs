@@ -4,15 +4,15 @@ mod evaluator;
 mod parser;
 
 use std::fmt::{self, Display};
-use crate::ch6::helper::DynError;
+use crate::helper::DynError;
 
 /// 正規表現と文字列をマッチング
 ///
 /// # 利用例
 ///
 /// ```
-/// use zero::ch6::engine;
-/// engine::do_matching("abc|(de|cd)+", "decddede", true);
+/// use regex;
+/// regex::do_matching("abc|(de|cd)+", "decddede", true);
 /// ```
 ///
 /// # 引数
@@ -41,8 +41,8 @@ pub fn do_matching(expr: &str, line: &str, is_depth: bool)
 /// # 利用例
 ///
 /// ```
-/// use zero::ch6::engine;
-/// engine::print("abc|(de|cd)+");
+/// use regex;
+/// regex::print("abc|(de|cd)+");
 /// ```
 ///
 /// # 返り値

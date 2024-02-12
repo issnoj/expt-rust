@@ -1,5 +1,5 @@
 //! 正規表現
-pub mod engine;
+mod engine;
 mod helper;
 
 use helper::DynError;
@@ -10,7 +10,7 @@ use std::{env, fs::File, io::{BufRead, BufReader}};
 /// # 引数
 ///
 /// 第一引数には正規表現、第二引数にはファイル名を指定する
-pub fn run() -> Result<(), DynError> {
+pub fn main() -> Result<(), DynError> {
     let args: Vec<String> = env::args().collect();
 
     if args.len() <= 2 {
@@ -57,8 +57,8 @@ fn match_file(expr: &str, file: &str) -> Result<(), DynError> {
 // 単体テスト
 #[cfg(test)]
 mod tests {
-    use crate::ch6::engine::do_matching;
-    use crate::ch6::helper::{safe_add, SafeAdd};
+    use crate::helper::{safe_add, SafeAdd};
+    use crate::engine::do_matching;
 
     #[test]
     fn test_safe_add() {

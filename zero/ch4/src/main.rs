@@ -1,4 +1,4 @@
-pub fn exec() {
+fn main() {
     impl_display::run();
     list_iterator::run();
     custom_error::run();
