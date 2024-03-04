@@ -1,4 +1,4 @@
-# echo コマンド
+# cat コマンド
 
 ## Dependencies
 
